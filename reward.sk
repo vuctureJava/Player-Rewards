@@ -1,0 +1,33 @@
+command /reward:
+    trigger:
+        set {_chest} to chest inventory with 3 rows named "Claim Reward"
+
+        loop numbers from 0 to 26:
+            set slot loop-number of {_chest} to minecraft:red_stained_glass_pane named "&r"
+
+        set slot 13 of {_chest} to chest named "&aClaim Reward"
+        open {_chest} to player
+
+
+on inventory click:
+    if name of event-inventory is "Claim Reward":
+        if clicked inventory is event-inventory:
+            cancel event
+
+            if clicked slot is 13:
+                set {_uuid} to uuid of player
+
+                if {rewardCooldown::%{_uuid}%} is set:
+                    set {_elapsed} to difference between now and {rewardCooldown::%{_uuid}%}
+
+                    if {_elapsed} < 1 hour:
+                        set {_remaining} to 1 hour - {_elapsed}
+                        send "&cYou must wait %{_remaining}% before claiming again." to player
+                        play sound "block.note_block.bass" with volume 100 and pitch 0.5 to player
+                        stop
+
+                give 1 diamond to player
+                send "&9&oYou have received your reward." to player
+                play sound "block.note_block.pling" with volume 100 and pitch 1 to player
+                set {rewardCooldown::%{_uuid}%} to now
+                close player's inventory
