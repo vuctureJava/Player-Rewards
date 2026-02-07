@@ -1,0 +1,5 @@
+command /rewardreset:
+    trigger:
+        delete {rewardCooldown::%uuid of player%}
+        send "&aYour reward cooldown has been reset."
+        play sound "block.note_block.pling" with volume 100 and pitch 1.2 to player
