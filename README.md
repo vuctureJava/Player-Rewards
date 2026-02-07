@@ -1,6 +1,6 @@
 # 💎  Player Rewards
 
-Rewards is a simple and intuitive **GUI** made with **Skript** for Minecraft servers. It allows players to open a GUI and quickly claim their rewards for playing, and other reasons.
+Rewards is a simple and intuitive **GUI** made with **Skript** for Minecraft servers. It allows players to open a GUI and quickly claim their rewards for playing, and other reasons. Alongside with a built in 1 hour cooldown.
 
 Created by **vucture**
 
