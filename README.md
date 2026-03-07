@@ -52,5 +52,3 @@ This project is open-source. You may use, modify, and share it, but please do no
 ---
 
 ⭐ If you like this project, consider giving it a star on GitHub!
-
-**Made with ❤️ by vucture**
